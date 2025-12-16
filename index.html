@@ -1,1 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="images/style.css">
+    <style>
+        body {
+            background-color: #0a0e27;
+            color: #e0e0e0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .navbar {
+            background-color: #1a1f3a;
+            border-bottom: 2px solid #6366f1;
+        }
+        
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 1.8rem;
+            color: #6366f1 !important;
+        }
+        
+        .nav-link {
+            color: #e0e0e0 !important;
+            margin-left: 1rem;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: #6366f1 !important;
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, #1a1f3a 0%, #0a0e27 100%);
+            padding: 80px 20px;
+            text-align: center;
+            border-bottom: 2px solid #6366f1;
+        }
+        
+        .hero-section h1 {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #6366f1;
+            text-shadow: 0 0 20px rgba(99, 102, 241, 0.5);
+        }
+        
+        .hero-section p {
+            font-size: 1.3rem;
+            color: #a0a0a0;
+        }
+        
+        .logo-section {
+            text-align: center;
+            padding: 40px 20px;
+            margin: 40px 0;
+        }
+        
+        .logo-image {
+            max-width: 200px;
+            height: auto;
+            filter: drop-shadow(0 0 15px rgba(99, 102, 241, 0.6));
+            transition: transform 0.3s ease;
+        }
+        
+        .logo-image:hover {
+            transform: scale(1.05);
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #6366f1;
+            margin: 60px 0 40px 0;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #6366f1;
+            text-shadow: 0 0 10px rgba(99, 102, 241, 0.3);
+        }
+        
+        .portfolio-card {
+            background-color: #1a1f3a;
+            border: 1px solid #6366f1;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        
+        .portfolio-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.4);
+            border-color: #a5b4fc;
+        }
+        
+        .portfolio-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-bottom: 1px solid #6366f1;
+        }
+        
+        .portfolio-card-body {
+            padding: 20px;
+        }
+        
+        .portfolio-card h5 {
+            color: #6366f1;
+            margin-bottom: 10px;
+        }
+        
+        .portfolio-card p {
+            color: #a0a0a0;
+            font-size: 0.95rem;
+        }
+        
+        .btn-primary {
+            background-color: #6366f1;
+            border-color: #6366f1;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background-color: #a5b4fc;
+            border-color: #a5b4fc;
+            box-shadow: 0 0 20px rgba(99, 102, 241, 0.6);
+        }
+        
+        .net-art-section {
+            background: linear-gradient(135deg, #1a1f3a 0%, #0a0e27 100%);
+            padding: 40px;
+            border-radius: 12px;
+            border: 2px solid #6366f1;
+            margin: 60px 0;
+            text-align: center;
+        }
+        
+        .net-art-section h5 {
+            color: #6366f1;
+            margin-bottom: 20px;
+        }
+        
+        .net-art-btn {
+            background-color: #6366f1;
+            color: white;
+            padding: 12px 40px;
+            font-size: 1.1rem;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        
+        .net-art-btn:hover {
+            background-color: #a5b4fc;
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(99, 102, 241, 0.6);
+            text-decoration: none;
+            color: white;
+        }
+        
+        footer {
+            background-color: #1a1f3a;
+            border-top: 2px solid #6366f1;
+            padding: 30px 0;
+            text-align: center;
+            margin-top: 80px;
+            color: #a0a0a0;
+        }
+        
+        .glitch-art-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container-fluid px-4">
+            <a class="navbar-brand" href="#home">ArtPortfolio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#code-art">Code Art</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#3d-render">3D Render</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#glitch-art">Glitch Art</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#meme-mashup">Meme Mashup</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#net-art">Net Art</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+        <div class="container">
+            <h1>Welcome to My Art Portfolio</h1>
+            <p>Exploring the intersection of art, code, and creativity</p>
+        </div>
+    </section>
+
+    <!-- Logo Section -->
+    <section class="logo-section">
+        <div class="container">
+            <div class="logo-section">
+                <img src="images/ArtLogo2.png" alt="Art Logo" class="logo-image">
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Portfolio Container -->
+    <div class="container py-5">
+
+        <!-- Code Art Section -->
+        <section id="code-art">
+            <h2 class="section-title">Code as Art</h2>
+            <div class="row">
+                <div class="col-md-6 col-lg-8 mx-auto">
+                    <div class="portfolio-card">
+                        <img src="images/codeart.png" alt="Code Art">
+                        <div class="portfolio-card-body">
+                            <h5>Code Art</h5>
+                            <p>Digital art created through code and computational creativity. Where programming becomes expression.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3D Render Section -->
+        <section id="3d-render">
+            <h2 class="section-title">3D Render</h2>
+            <div class="row">
+                <div class="col-md-6 col-lg-8 mx-auto">
+                    <div class="portfolio-card">
+                        <img src="images/deskspacefinal.png" alt="3D Render - Desk Space">
+                        <div class="portfolio-card-body">
+                            <h5>Desk Space</h5>
+                            <p>A detailed 3D render exploring spatial design and digital environments.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Glitch Art Section -->
+        <section id="glitch-art">
+            <h2 class="section-title">Glitch Art</h2>
+            <div class="glitch-art-container">
+                <div class="portfolio-card">
+                    <img src="images/glitchart1.png" alt="Glitch Art 1">
+                    <div class="portfolio-card-body">
+                        <h5>Glitch 01</h5>
+                        <p>Digital distortion and error aesthetics exploring the beauty in digital chaos.</p>
+                    </div>
+                </div>
+                <div class="portfolio-card">
+                    <img src="images/glitchart2.png" alt="Glitch Art 2">
+                    <div class="portfolio-card-body">
+                        <h5>Glitch 02</h5>
+                        <p>Fragmenting reality through algorithmic visual corruption.</p>
+                    </div>
+                </div>
+                <div class="portfolio-card">
+                    <img src="images/glitchart3.png" alt="Glitch Art 3">
+                    <div class="portfolio-card-body">
+                        <h5>Glitch 03</h5>
+                        <p>Exploring the intersection between error and intention in digital art.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Meme Mashup Section -->
+        <section id="meme-mashup">
+            <h2 class="section-title">Meme Mashup</h2>
+            <div class="row">
+                <div class="col-md-6 col-lg-8 mx-auto">
+                    <div class="portfolio-card">
+                        <img src="images/mememashup.png" alt="Meme Mashup">
+                        <div class="portfolio-card-body">
+                            <h5>Meme Mashup</h5>
+                            <p>Pop culture and internet culture collide in this playful digital composition.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Net Art Section -->
+        <section id="net-art" class="net-art-section">
+            <h5>Net Art</h5>
+            <p>Interactive web-based art experience</p>
+            <a href="https://edmts-code.github.io/index.html" target="_blank" class="net-art-btn">Explore Net Art →</a>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Art Portfolio. All rights reserved.</p>
+        <p>Created with creativity and code</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
 
